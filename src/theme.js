@@ -1,8 +1,10 @@
 const theme = {
   colors: {
     textPrimary: '#24292e',
-    textSecondary: '#e0e0e0',
+    textSecondary: '#707070',
+    textLight: '#eaeaea',
     backgroundPrimary: '#24292e',
+    backgroundSecondary: '#e1e4e8',
     primary: '#0366d6',
   },
   fontSizes: {
@@ -16,6 +18,9 @@ const theme = {
   fontWeights: {
     normal: '400',
     bold: '700',
+  },
+  padding: {
+    main: 20,
   },
 };
 

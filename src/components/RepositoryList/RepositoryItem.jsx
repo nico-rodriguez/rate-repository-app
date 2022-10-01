@@ -1,5 +1,13 @@
-import { View } from 'react-native';
-import Text from '../Text';
+import { StyleSheet, View } from 'react-native';
+import theme from '../../theme';
+import BasicInfo from './BasicInfo';
+import Stats from './Stats';
+
+const styles = StyleSheet.create({
+  container: {
+    padding: theme.padding.main,
+  },
+});
 
 const RepositoryItem = ({
   fullName,
@@ -9,16 +17,22 @@ const RepositoryItem = ({
   forksCount,
   reviewCount,
   ratingAverage,
+  ownerAvatarUrl,
 }) => {
   return (
-    <View>
-      <Text>Full name: {fullName}</Text>
-      <Text>Description: {description}</Text>
-      <Text>Language: {language}</Text>
-      <Text>Stars: {stargazersCount}</Text>
-      <Text>Forks: {forksCount}</Text>
-      <Text>Reviews: {reviewCount}</Text>
-      <Text>Rating: {ratingAverage}</Text>
+    <View style={styles.container}>
+      <BasicInfo
+        ownerAvatarUrl={ownerAvatarUrl}
+        fullName={fullName}
+        description={description}
+        language={language}
+      />
+      <Stats
+        stargazersCount={stargazersCount}
+        forksCount={forksCount}
+        reviewCount={reviewCount}
+        ratingAverage={ratingAverage}
+      />
     </View>
   );
 };

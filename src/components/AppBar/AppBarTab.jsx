@@ -2,7 +2,7 @@ import Text from '../Text';
 
 const AppBarTab = ({ textContent }) => {
   return (
-    <Text color='textSecondary' fontSize='large' fontWeight='bold'>
+    <Text fontSize='large' fontWeight='bold' color='textLight'>
       {textContent}
     </Text>
   );
