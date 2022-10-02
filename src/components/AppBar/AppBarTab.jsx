@@ -1,10 +1,13 @@
+import { Link } from 'react-router-native';
 import Text from '../Text';
 
-const AppBarTab = ({ textContent }) => {
+const AppBarTab = ({ textContent, route }) => {
   return (
-    <Text fontSize='large' fontWeight='bold' color='textLight'>
-      {textContent}
-    </Text>
+    <Link to={route ?? '/'}>
+      <Text fontSize='large' fontWeight='bold' color='textLight'>
+        {textContent}
+      </Text>
+    </Link>
   );
 };
 
