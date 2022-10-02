@@ -1,13 +1,22 @@
+import { StyleSheet, View } from 'react-native';
 import { Link } from 'react-router-native';
 import Text from '../Text';
 
+const styles = StyleSheet.create({
+  container: {
+    marginRight: 16,
+  },
+});
+
 const AppBarTab = ({ textContent, route }) => {
   return (
-    <Link to={route ?? '/'}>
-      <Text fontSize='large' fontWeight='bold' color='textLight'>
-        {textContent}
-      </Text>
-    </Link>
+    <View style={styles.container}>
+      <Link to={route ?? '/'}>
+        <Text fontSize='large' fontWeight='bold' color='textLight'>
+          {textContent}
+        </Text>
+      </Link>
+    </View>
   );
 };
 
