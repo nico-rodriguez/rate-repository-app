@@ -1,5 +1,6 @@
 import { useField } from 'formik';
 import { StyleSheet } from 'react-native';
+import theme from '../theme';
 import Text from './Text';
 import { TextInput } from './TextInput';
 
@@ -9,7 +10,9 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   errorText: {
-    marginTop: 5,
+    marginBottom: 5,
+    color: theme.colors.error,
+    alignSelf: 'flex-start',
   },
 });
 
