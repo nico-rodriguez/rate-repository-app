@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, View } from 'react-native';
-import { repositories } from '../../mocks/data';
+import useRepositories from '../../hooks/useRepositories';
 import theme from '../../theme';
 import RepositoryItem from './RepositoryItem';
 
@@ -21,11 +21,18 @@ const styles = StyleSheet.create({
 const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
+  const { repositories } = useRepositories();
+
+  // Get the nodes from the edges array
+  const repositoriesNodes = repositories
+    ? repositories.edges.map(({ node }) => node)
+    : [];
+
   return (
     <View style={styles.wrapper}>
       <View style={styles.container}>
         <FlatList
-          data={repositories}
+          data={repositoriesNodes}
           ItemSeparatorComponent={ItemSeparator}
           renderItem={({ item }) => <RepositoryItem {...item} />}
         />
