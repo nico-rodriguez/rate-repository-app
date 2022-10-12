@@ -8,10 +8,10 @@ const styles = StyleSheet.create({
   },
 });
 
-const AppBarTab = ({ textContent, route }) => {
+const AppBarTab = ({ textContent, route, onPress }) => {
   return (
     <View style={styles.container}>
-      <Link to={route ?? '/'}>
+      <Link to={route ?? '/'} onPress={onPress}>
         <Text fontSize='large' fontWeight='bold' color='textLight'>
           {textContent}
         </Text>
