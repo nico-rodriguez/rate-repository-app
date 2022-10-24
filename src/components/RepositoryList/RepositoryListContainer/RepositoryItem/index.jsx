@@ -1,5 +1,5 @@
 import { StyleSheet, View } from 'react-native';
-import theme from '../../../theme';
+import theme from '../../../../theme';
 import BasicInfo from './BasicInfo';
 import Stats from './Stats';
 
@@ -20,7 +20,7 @@ const RepositoryItem = ({
   ownerAvatarUrl,
 }) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='repositoryItem'>
       <BasicInfo
         ownerAvatarUrl={ownerAvatarUrl}
         fullName={fullName}
