@@ -8,6 +8,7 @@ import Stats from './Stats';
 const styles = StyleSheet.create({
   container: {
     padding: theme.padding.main,
+    backgroundColor: '#ffffff',
   },
 });
 
