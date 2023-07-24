@@ -1,11 +1,11 @@
-import { useQuery } from '@apollo/client';
-import { FlatList, View, StyleSheet } from 'react-native';
-import { useParams } from 'react-router-native';
-import { GET_REPOSITORY } from '../../graphql/queries';
-import theme from '../../theme';
-import RepositoryItem from '../RepositoryItem';
-import Text from '../Text';
-import ReviewItem from './ReviewItem';
+import { useQuery } from "@apollo/client";
+import { FlatList, View, StyleSheet } from "react-native";
+import { useParams } from "react-router-native";
+import { GET_REPOSITORY } from "../../graphql/queries";
+import theme from "../../theme";
+import RepositoryItem from "../RepositoryItem";
+import Text from "../Text";
+import ReviewItem from "./ReviewItem";
 
 const styles = StyleSheet.create({
   listWrapper: {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
   listHeader: {
     marginBottom: 10,
-    backgroundColor: '#ffffff',
+    backgroundColor: "#ffffff",
   },
   separator: {
     height: 10,
@@ -27,6 +27,8 @@ function SingleRepository() {
   const { repositoryId } = useParams();
   const { loading, error, data } = useQuery(GET_REPOSITORY, {
     variables: { id: repositoryId },
+    //prevent getting cached data with the repository query
+    fetchPolicy: "cache-and-network",
   });
 
   if (loading) return <Text>Loading...</Text>;
