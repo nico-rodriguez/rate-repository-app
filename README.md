@@ -2,7 +2,7 @@
 
 ## About
 
-A mobile application for rating GitHub repositories. Sort and filter repositories, register a user, log in and create a reviews.
+A mobile application for rating GitHub repositories. Sort and filter repositories, register a user, log in and create reviews.
 
 ## Features
 

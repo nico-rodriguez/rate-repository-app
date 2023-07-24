@@ -26,8 +26,12 @@ const AppBar = () => {
     <Pressable style={styles.container}>
       <ScrollView horizontal contentContainerStyle={styles.tabsContainer}>
         <AppBarTab textContent='Repositories' />
+        <AppBarTab textContent='Create a review' route='/review-form' />
         {!loading && !error && data.me ? (
-          <AppBarTab textContent='Sign out' onPress={handleSignOut} />
+          <>
+            <AppBarTab textContent="Create a review" route="/review-form" />
+            <AppBarTab textContent="Sign out" onPress={handleSignOut} />
+          </>
         ) : (
           <AppBarTab textContent='Sign in' route='/signin' />
         )}

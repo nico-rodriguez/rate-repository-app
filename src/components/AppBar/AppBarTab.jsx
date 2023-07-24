@@ -1,6 +1,6 @@
-import { StyleSheet, View } from 'react-native';
-import { Link } from 'react-router-native';
-import Text from '../Text';
+import { StyleSheet, View } from "react-native";
+import { Link } from "react-router-native";
+import Text from "../Text";
 
 const styles = StyleSheet.create({
   container: {
@@ -11,8 +11,8 @@ const styles = StyleSheet.create({
 const AppBarTab = ({ textContent, route, onPress }) => {
   return (
     <View style={styles.container}>
-      <Link to={route ?? '/'} onPress={onPress}>
-        <Text fontSize='large' fontWeight='bold' color='textLight'>
+      <Link to={route ?? "/"} onPress={onPress}>
+        <Text fontSize="large" fontWeight="bold" color="textLight">
           {textContent}
         </Text>
       </Link>

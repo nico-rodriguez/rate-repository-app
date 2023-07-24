@@ -1,23 +1,22 @@
-import { Formik } from 'formik';
-import { object, string } from 'yup';
-import useSignIn from '../../hooks/useSignIn';
-import SignInForm from './SignInForm';
+import { Formik } from "formik";
+import { object, string } from "yup";
+import useSignIn from "../../hooks/useSignIn";
+import SignInForm from "./SignInForm";
 
 const initialValues = {
-  username: '',
-  password: '',
+  username: "",
+  password: "",
 };
 
 const validationSchema = object({
-  username: string().required('Username is required'),
-  password: string().required('Password is required'),
+  username: string().required("Username is required"),
+  password: string().required("Password is required"),
 });
 
 const SignIn = () => {
   const [signIn] = useSignIn();
 
   const handleSubmit = async (values) => {
-    console.log(values);
     const { username, password } = values;
 
     try {
