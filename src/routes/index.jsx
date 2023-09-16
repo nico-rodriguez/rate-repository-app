@@ -1,9 +1,9 @@
 import { Navigate, Route, Routes } from "react-router-native";
 import RepositoryList from "../components/RepositoryList";
-import SignIn from "../components/SignIn";
-import SingleRepository from "../components/SingleRepository";
 import Review from "../components/Review";
+import SignIn from "../components/SignIn";
 import SignUp from "../components/Signup";
+import SingleRepository from "../components/SingleRepository";
 
 const AppRoutes = () => {
   return (
