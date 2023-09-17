@@ -1,7 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { GET_REPOSITORIES } from "../graphql/queries";
 
-const useRepositories = ({ sortingMethod }) => {
+const useRepositories = (sortingMethod = "CREATED_AT", searchKeyword = "") => {
   const orderBy = sortingMethod.includes("RATING_AVERAGE")
     ? "RATING_AVERAGE"
     : "CREATED_AT";
@@ -10,7 +10,7 @@ const useRepositories = ({ sortingMethod }) => {
   const { loading, data } = useQuery(GET_REPOSITORIES, {
     //prevent getting cached data with the repository query
     fetchPolicy: "cache-and-network",
-    variables: { orderBy, orderDirection },
+    variables: { orderBy, orderDirection, searchKeyword },
   });
 
   const repositories = data?.repositories;
