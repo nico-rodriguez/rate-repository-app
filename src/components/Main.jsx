@@ -1,5 +1,5 @@
-import AppRoutes from '../routes';
-import AppBar from './AppBar';
+import AppRoutes from "../routes";
+import AppBar from "./AppBar";
 
 const Main = () => {
   return (
