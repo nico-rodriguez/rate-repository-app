@@ -29,6 +29,7 @@ const AppBar = () => {
         {!loading && !error && data.me ? (
           <>
             <AppBarTab textContent="Create a review" route="/review-form" />
+            <AppBarTab textContent="My reviews" route="/my-reviews" />
             <AppBarTab textContent="Sign out" onPress={handleSignOut} />
           </>
         ) : (
