@@ -72,11 +72,11 @@ export const GET_REPOSITORY = gql`
 
 export const ME = gql`
   ${REVIEW_CONTENTS}
-  query GetCurrentUser($includeReviews: Boolean = false) {
+  query GetCurrentUser($first: Int, $after: String, $includeReviews: Boolean = false) {
     me {
       id
       username
-      reviews @include(if: $includeReviews) {
+      reviews(first: $first, after: $after) @include(if: $includeReviews) {
         edges {
           node {
             ...ReviewContents

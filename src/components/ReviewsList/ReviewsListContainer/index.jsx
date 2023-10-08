@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 
 const ItemSeparator = () => <View style={styles.separator} />;
 
-const ReviewsListContainer = ({ reviews }) => {
+const ReviewsListContainer = ({ reviews, handleEndReached }) => {
   // Get the nodes from the edges array
   const reviewsNodes = reviews
     ? reviews.edges.map(({ node }) => node)
@@ -32,6 +32,8 @@ const ReviewsListContainer = ({ reviews }) => {
           data={reviewsNodes}
           ItemSeparatorComponent={ItemSeparator}
           renderItem={({ item }) => <UserReview {...item} />}
+          onEndReached={handleEndReached}
+          onEndReachedThreshold={0.5}
         />
       </View>
     </View>
