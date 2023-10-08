@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, View } from 'react-native';
 import theme from '../../../theme';
-import ReviewItem from '../../SingleRepository/ReviewItem';
+import UserReview from './UserReview';
 
 const styles = StyleSheet.create({
   wrapper: {
@@ -31,7 +31,7 @@ const ReviewsListContainer = ({ reviews }) => {
         <FlatList
           data={reviewsNodes}
           ItemSeparatorComponent={ItemSeparator}
-          renderItem={({ item }) => <ReviewItem {...item} />}
+          renderItem={({ item }) => <UserReview {...item} />}
         />
       </View>
     </View>

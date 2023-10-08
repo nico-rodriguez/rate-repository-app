@@ -10,6 +10,10 @@ const REVIEW_CONTENTS = gql`
       id
       username
     }
+    repository {
+      id,
+      name
+    }
   }
 `;
 
